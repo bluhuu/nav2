@@ -33,13 +33,21 @@ class MyHomeScreen extends Component {
     render() {
         if(this.state.swiperShow){
             return(
-                <View>
+                <View scrollEnabled={true}>
                     <StatusBar translucent backgroundColor={"rgba(100,100,100,0.2)"} />
                     <Swiper style={styles.wrapper} height={180} loop autoPlay={true}>
+                        <View style={styles.imgView}>
                         <Image resizeMode='stretch' style={styles.image} source={require('./img/1.jpg')} />
+                        </View>
+                        <View style={styles.imgView}>
                         <Image resizeMode='stretch' style={styles.image} source={require('./img/2.jpg')} />
+                        </View>
+                        <View style={styles.imgView}>
                         <Image resizeMode='stretch' style={styles.image} source={require('./img/3.jpg')} />
+                        </View>
+                        <View style={styles.imgView}>
                         <Image resizeMode='stretch' style={styles.image} source={require('./img/4.jpg')} />
+                        </View>
                     </Swiper>
                     <MyNavScreen banner="Home Tab" navigation={this.props.navigation}/>
                 </View>
@@ -131,7 +139,11 @@ const styles = StyleSheet.create({
     width,
     height: 180,
     flex: 1
-  }
+},
+imgView: {
+        flex: 1,
+        height: 200,
+    },
 });
 
 export default SimpleTabs;

@@ -8,9 +8,11 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import SampleText from './SampleText';
+import SimpleScreen from './SimpleScreen'
 
 const MyNavScreen = ({ navigation, banner }) => (
   <ScrollView>
+      <SimpleScreen/>
     <SampleText>{banner}</SampleText>
     <Button
       onPress={() => navigation.navigate('Profile', { name: 'Jordan' })}
